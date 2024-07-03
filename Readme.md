@@ -5,18 +5,13 @@ Welcome to the Robotics Lessons repository! This repository contains notebooks a
 ## Contents
 
 - **Notebooks:**
-  - [Gears Basics](link/to/gears_notebook.ipynb): Introduction to gears and their applications in robotics.
-  - [Mechanical Fundamentals](link/to/mechanical_notebook.ipynb): Basic principles of mechanical design in robotics.
-  - [Electronics Essentials](link/to/electronics_notebook.ipynb): Overview of essential electronics for robotics projects.
-
-- **Notes:**
-  - [Gears Overview](link/to/gears_notes.md): Detailed notes on various types of gears and their uses.
-  - [Mechanical Design Principles](link/to/mechanical_notes.md): Key principles in designing mechanical systems for robots.
-  - [Basic Electronics for Robotics](link/to/electronics_notes.md): Fundamental electronics concepts tailored for robotics applications.
+  - [Gears Basics](https://github.com/Chandra-Suryadevara/Robotics_lessons/blob/main/Gears.ipynb): Introduction to gears and their applications in robotics.
+  - [Mechanical Fundamentals](link/to/mechanical_notebook.ipynb): Basic principles of mechanical design in robotics.[To be Done]
+  - [Electronics Essentials](link/to/electronics_notebook.ipynb): Overview of essential electronics for robotics projects.[To be Done]
 
 ## About
 
-This repository is maintained by [Your Name]. Feel free to explore, use, and contribute to enhance the learning experience for robotics enthusiasts of all levels.
+This repository is maintained by Chandra Shekar Suryadevara . Feel free to explore, use, and contribute to enhance the learning experience for robotics enthusiasts of all levels.
 
 ## Getting Started
 
