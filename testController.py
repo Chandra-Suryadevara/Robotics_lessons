@@ -22,31 +22,6 @@ class Xbox_Controller_Robot:
         byte_array = bytearray([1,1,0,2,1,0,3,1,0,4,1,0])
         self.communicator.write(byte_array)
 
-
-
-    def take_action(self, direction_number, speed):
-        if direction_number == 1: #Forward Drive
-            byte_array = bytearray([1,1,speed,2,1,speed,3,1,speed,4,1,speed])
-            self.communicator.write(byte_array)
-            time.sleep(1)
-            self.stop_all_motors()
-        if direction_number == 2: # Backward Drive
-            byte_array = bytearray([1,0,speed,2,0,speed,3,0,speed,4,0,speed])
-            self.communicator.write(byte_array)
-            time.sleep(1)
-            self.stop_all_motors()
-        if direction_number == 3:#left drive (please figure out what we are doing)
-            byte_array = bytearray([1,1,speed,2,1,speed,3,1,speed,4,1,speed])
-            self.communicator.write(byte_array)
-            time.sleep(1)
-            self.stop_all_motors()
-        if direction_number == 4:#right drive (please figure out what we are doing)
-            byte_array = bytearray([1,1,speed,2,1,speed,3,1,speed,4,1,speed])
-            self.communicator.write(byte_array)
-            time.sleep(1)
-            self.stop_all_motors()
-
-
     def pretesting(self):
         joysticks = []
         for i in range(0, pygame.joystick.get_count()):
@@ -56,57 +31,45 @@ class Xbox_Controller_Robot:
 
 
     def start_game(self):
-        while True or KeyboardInterrupt:
+        while True:
             for event in pygame.event.get():
                 if event.type == pygame.JOYAXISMOTION:
-
                     if event.axis < 2:
-                        print(event.value)
-                        #motor_speed = event.value * -1
-                        #print(f"motor_speed: {motor_speed}")
-                        if event.axis == 0: # left/right
+                        if event.axis == 0:  # left/right
                             if event.value < -0.5:
-                                print("left")
+                                print("Left")
+                                print(event.value)
+                                speed = int(event.value * (-255))
+                                byte_array = bytearray([1, 1, speed, 2, 0, speed, 3, 1, speed, 4, 0, speed])
+                                self.communicator.write(byte_array)
+                            elif event.value > 0.5:
+                                print("Right")
+                                print(event.value)
+                                speed = int(event.value * 255)
+                                byte_array = bytearray([1, 0, speed, 2, 1, speed, 3, 0, speed, 4, 1, speed])
+                                self.communicator.write(byte_array)
+                            else:
+                                self.stop_all_motors()
 
-                            if event.value > 0.5:
-                                print("right")                        
-
-                        if event.axis == 1: # up/down
+                        if event.axis == 1:  # up/down
                             if event.value < -0.5:
-                                print("up")
-                                
-                            if event.value > 0.5:
-                                print("down")
-
-                    if event.axis > 2:
-                        if event.axis==4:
-                                print("Right Trigger") #Vlaue rnage from -1 to 1
+                                print("Up")
                                 print(event.value)
-
-                        if event.axis==5:
-                                print("Left Trigger") #Vlaue rnage from -1 to 1
+                                speed = int(event.value * (-255))
+                                byte_array = bytearray([1, 1, speed, 2, 1, speed, 3, 1, speed, 4, 1, speed])
+                                self.communicator.write(byte_array)
+                            elif event.value > 0.5:
+                                print("Down")
                                 print(event.value)
+                                speed = int(event.value * 255)
+                                byte_array = bytearray([1, 0, speed, 2, 0, speed, 3, 0, speed, 4, 0, speed])
+                                self.communicator.write(byte_array)
+                            else:
+                                self.stop_all_motors()
 
-
+            # Add a delay to control input handling rate
+            time.sleep(0.1)  # Delay in seconds (100 milliseconds)
 
 
 c1 = Xbox_Controller_Robot()
 c1.start_game()
-
-
-
- #  while True:
-
-        # Pack the numbers into a single byte array
-  #      byte_array = bytearray(straightSpeed)
-
-        # Send the entire byte array at once
-   #     ser.write(byte_array)
-        
-     #   line = ser.readline().decode('utf-8').rstrip()
-    #    print(line)
-      #  time.sleep(1)
-
-
-
-
