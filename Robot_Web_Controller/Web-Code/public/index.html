@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Web Application</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="buttons">
+            <button id="frontBtn">Front</button>
+            <button id="backBtn">Back</button>
+            <button id="leftBtn">Left</button>
+            <button id="rightBtn">Right</button>
+            <button id="brakeBtn">Brake</button>
+        </div>
+        <div class="controls">
+            <label for="killSwitch">Kill </label>
+            <input type="checkbox" id="KillSwitch">
+        </div>
+        <div class="speed-slider">
+            <label for="speed">Speed: </label>
+            <input type="range" id="speed" min="155" max="255">
+        </div>
+    </div>
+
+    <script type="module" src="./script.js"></script>
+</body>
+</html>

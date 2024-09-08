@@ -1,0 +1,85 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffffff;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Limit container width for mobile */
+    margin: 0 auto;
+}
+
+.buttons {
+    margin-bottom: 20px;
+    position: relative;
+    height: 200px;
+}
+
+/* Default button positions for larger screens */
+#frontBtn {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#backBtn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#leftBtn {
+    position: absolute;
+    top: 45%;
+    left: 5%;
+    transform: translateY(-50%);
+}
+
+#rightBtn {
+    position: absolute;
+    top: 45%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+#brakeBtn {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Controls and volume slider */
+.controls, .speed-slider {
+    margin: 10px 0;
+}
+
+/* Adjustments for mobile screens */
+@media (max-width: 768px) {
+    .buttons {
+        height: auto;
+    }
+
+    #frontBtn, #backBtn, #leftBtn, #rightBtn, #brakeBtn {
+        position: static;
+        transform: none;
+        margin: 10px 0;
+        width: 100%;
+    }
+}
